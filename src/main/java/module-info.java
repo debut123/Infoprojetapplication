@@ -5,6 +5,7 @@ module fr.isep.francois.projetapplication {
 
     requires org.kordamp.bootstrapfx.core;
     requires org.apache.commons.csv;
+    requires java.desktop;
 
     opens fr.isep.francois.projetapplication to javafx.fxml;
     exports fr.isep.francois.projetapplication;

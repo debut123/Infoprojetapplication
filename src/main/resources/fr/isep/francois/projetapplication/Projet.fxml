@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="20.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.isep.francois.projetapplication.ProjetController">
+    <padding>
+
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+
+
+    </padding>
+    <Label text="Liste des Projets:" />
+
+    <!-- ListView pour afficher la liste des projets -->
+    <ListView fx:id="listViewProjetsBox" prefHeight="400" prefWidth="600">
+        <!-- La liste sera remplie dynamiquement dans le contrôleur -->
+    </ListView>
+
+
+
+    <Button mnemonicParsing="false" text="Projet" />
+   <Button mnemonicParsing="false" onAction="#OpenNewPageaccueil" text="Retour acceuil" />
+
+</VBox>

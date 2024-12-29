@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="20.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.isep.francois.projetapplication.EmployeCreationController">
+    <padding>
+
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+
+
+    </padding>
+    <Label text="Création d'un employé" />
+   <Label text="Identifiant :" />
+   <TextField fx:id="identifiant" />
+   <Label text="Nom :" />
+   <TextField fx:id="nom" />
+   <Label text="Prénom :" />
+   <TextField fx:id="prenom" />
+   <Label text="age" />
+   <TextField fx:id="age" />
+   <Label text="Rôle :" />
+   <TextField fx:id="type" />
+    <Button fx:id="enregistrement" mnemonicParsing="false" onAction="#nouvelemploye" text="Enregistrer" />
+
+</VBox>

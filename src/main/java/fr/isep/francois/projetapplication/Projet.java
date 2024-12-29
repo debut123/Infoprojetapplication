@@ -8,23 +8,45 @@ import java.util.Map;
 public class Projet {
 
     // Attributs
+
     private String nom;
     private ArrayList<Tache> liste_tache_projet;
     private LocalDate date_limite;
     private Map<Employe, String> liste2_employe_projet; // Mappage Employé -> Rôle
-    private ArrayList<Projet> listeProjets;
+    public ArrayList<Projet> listeProjets;
+    private int budget;  // Attribut budget ajouté
 
-    // Constructeur mis à jour : Prend en compte un mappage Employé -> Rôle
+
+
+    public ArrayList<Projet> getListeProjets() {
+        return listeProjets;
+    }
+
+    public void setListeProjets(ArrayList<Projet> listeProjets) {
+        this.listeProjets = listeProjets;
+    }
+
+    // Constructeur mis à jour : Prend en compte un mappage Employé -> Rôle et un budget
     public Projet(String nom, ArrayList<Tache> liste_tache_projet, LocalDate date_limite,
-                  Map<Employe, String> liste2_employe_projet) {
+                  Map<Employe, String> liste2_employe_projet, int budget) {
         this.nom = nom;
         this.liste_tache_projet = liste_tache_projet;
         this.date_limite = date_limite;
         this.liste2_employe_projet = liste2_employe_projet; // Initialisation du mappage
+        this.budget = budget;  // Initialisation du budget
         this.listeProjets = new ArrayList<>();
     }
 
-    // Getters et Setters
+    // Getter et Setter pour le budget
+    public int getBudget() {
+        return budget;
+    }
+
+    public void setBudget(int budget) {
+        this.budget = budget;
+    }
+
+    // Getters et Setters pour les autres attributs
     public String getNom() {
         return nom;
     }
@@ -110,6 +132,7 @@ public class Projet {
         if (!this.listeProjets.contains(projet)) {
             this.listeProjets.add(projet);
         }
+
     }
 
     public void supprimerProjet(String nomProjet) {
@@ -121,10 +144,11 @@ public class Projet {
             }
         }
     }
+
     // Fonction pour modifier les informations d'un projet
     public void modifierProjet(String nouveauNom, ArrayList<Tache> nouvellesTaches,
                                LocalDate nouvelleDateLimite,
-                               Map<Employe, String> nouveauxEmployesAvecRoles) {
+                               Map<Employe, String> nouveauxEmployesAvecRoles, int nouveauBudget) {
         // Mettre à jour les informations du projet
         if (nouveauNom != null && !nouveauNom.isEmpty()) {
             this.nom = nouveauNom;
@@ -137,6 +161,9 @@ public class Projet {
         }
         if (nouveauxEmployesAvecRoles != null) {
             this.liste2_employe_projet = nouveauxEmployesAvecRoles;
+        }
+        if (nouveauBudget >= 0) {
+            this.budget = nouveauBudget;
         }
 
         System.out.println("Le projet a été modifié avec succès.");

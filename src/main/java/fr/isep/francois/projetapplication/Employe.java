@@ -9,24 +9,24 @@ public class Employe {
 
     // initialisation de la liste des employés.
 
-ArrayList<Employe> liste_employe=new ArrayList<>();
+static ArrayList<Employe> liste_employe=new ArrayList<>();
 
 // initialisation des attributs.
 
-    int identifiant;
+ int identifiant;
 
     String nom;
 
-    String prenom;
+   String prenom;
 
-    int age;
+   int age;
 
 
-    String type;
+  String type;
 
     ArrayList<String>liste_projet_realise;
 
-    LocalDate date_embauche;
+    static LocalDate date_embauche;
 
     public Employe(int identifiant, String nom, String prenom,
                    int age, String type, ArrayList<String> liste_projet_realise,
@@ -35,7 +35,7 @@ ArrayList<Employe> liste_employe=new ArrayList<>();
         this.nom = nom;
         this.prenom = prenom;
         this.age = age;
-        type = type;
+        this.type = type;
         this.liste_projet_realise = liste_projet_realise;
         this.date_embauche = date_embauche;
     }
@@ -106,9 +106,14 @@ ArrayList<Employe> liste_employe=new ArrayList<>();
     }
 // principales fonctions:
 
+    public void ajouterProjet(String projet) {
+        // Ajouter le projet à la liste des projets réalisés
+        this.liste_projet_realise.add(projet);
+    }
+
 public void ajouter_employe(int identifiant, String nom, String prenom,
-                             int age, String type, ArrayList<String> liste_projet_realise,
-                             LocalDate date_emboche){
+                                   int age, String type, ArrayList<String> liste_projet_realise,
+                                   LocalDate date_emboche){
 
         Employe employe=new Employe(identifiant, nom, prenom, age, type, liste_projet_realise, date_embauche);
         liste_employe.add(employe);

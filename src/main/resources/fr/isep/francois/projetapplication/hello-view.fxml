@@ -8,11 +8,8 @@
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
+   <Label text="Bienvenue dans l'appli" />
 
-    <Label fx:id="welcomeText" text="Bienvenue chez le beau gosse françois !" />
-   <Label text="identifiant:" />
-   <TextField />
-   <Label text="mot de passe" />
-   <TextField />
-   <Button mnemonicParsing="false" text="Soumettre" />
+
+   <Button mnemonicParsing="false" onAction="#OpenNewPage" text="Commencer" />
 </VBox>
