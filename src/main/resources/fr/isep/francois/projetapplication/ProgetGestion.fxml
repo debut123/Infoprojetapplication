@@ -15,12 +15,14 @@
    <Label fx:id="information" text="information :" />
 
     <!-- Affichage des employés -->
-    <Label text="Employés :"/>
-    <ListView fx:id="listViewEmployes"/>
+    <Label text="Employés :" />
+    <ListView fx:id="listViewEmployes" />
+   <Button mnemonicParsing="false" onAction="#OpenNewPageajoutemploye" text="Ajouter employe" />
 
     <!-- Affichage des tâches -->
-    <Label text="Tâches :"/>
-    <ListView fx:id="listViewTaches"/>
+    <Label text="Tâches :" />
+    <ListView fx:id="listViewTaches" />
+   <Button mnemonicParsing="false" onAction="#OpenNewPageCreationtache" text="Ajouter tache" />
 
    <Button mnemonicParsing="false" onAction="#OpenNewPageaccueil" text="Retour Acceuil" />
 

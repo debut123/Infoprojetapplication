@@ -32,7 +32,8 @@ public class HelloApplication extends Application {
         ProjetController projetController=new ProjetController();
         ProjetGestionController projetGestionController=new ProjetGestionController();
         ProjetAffectattionEmployeTache projetAffectattionEmployeTache=new ProjetAffectattionEmployeTache();
-
+        Projetajoutemploye projetajoutemploye=new Projetajoutemploye();
+        ProjetCreationTacheController projetCreationTacheController=new ProjetCreationTacheController();
 
 
 
@@ -48,6 +49,8 @@ public class HelloApplication extends Application {
             projetController.setStage(stage);
             projetGestionController.setStage(stage);
             projetAffectattionEmployeTache.setStage(stage);
+            projetajoutemploye.setStage(stage);
+            projetCreationTacheController.setStage(stage);
 
 
             System.out.println("Contrôleur correctement initialisé.");
@@ -83,6 +86,8 @@ public class HelloApplication extends Application {
         // Initialisation d'un projet principal
         Map<Employe, String> employes = new HashMap<>();
         Projet projetPrincipal = new Projet("Projet Principal", new ArrayList<>(), LocalDate.now(), employes, 50000);
+        /*
+
         projetPrincipal.ajouterProjet(projetPrincipal);
 // Création et ajout de 10 projets
         for (int i = 1; i <= 10; i++) {
@@ -118,7 +123,7 @@ public class HelloApplication extends Application {
             projetPrincipal.ajouterProjet(projet);
         }
 
-
+*/
         projetController.setListeProjets(projetPrincipal.getListeProjets());
 
         Scene scene = new Scene(fxmlLoader.load(), 400, 300);

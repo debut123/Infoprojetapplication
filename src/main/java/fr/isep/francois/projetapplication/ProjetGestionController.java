@@ -29,6 +29,9 @@ public class ProjetGestionController {
     private Button Acceuil;
 
     @FXML
+    private Button ajoutTache;
+
+    @FXML
     private Label information;
     @FXML
     private ListView<HBox> listViewEmployes;  // Liste pour afficher les employés
@@ -120,6 +123,7 @@ public class ProjetGestionController {
                 Label labelTache = new Label(tache.getNom() + " - " + tache.getDescription());
                 Button boutonSuppression = new Button("Supprimer");
 
+
                 Button affectation=new Button("affecter des employés:");
 
                 // Ajouter un événement pour le bouton de suppression
@@ -180,7 +184,49 @@ public class ProjetGestionController {
         System.out.println("le bouton est cliqué.");
 
     }
+    @FXML
+    private void OpenNewPageajoutemploye() {
 
+        System.out.println(stage);
+
+        if (stage != null) {
+
+            stage.setTitle("Nouvelle page");
+            System.out.println("Page ouverte.");
+
+
+        } else {
+            System.out.println("Le stage est null");
+
+        }
+
+        try {
+
+
+            // Charger la nouvelle page (Page2.fxml)
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("projetajouteremploye.fxml"));
+            Projetajoutemploye projetajoutemploye=loader.getController();
+
+
+            System.out.println("Contrôleur récupéré : " + projetajoutemploye);
+
+            Projetajoutemploye.setProjetreferent(projetreferent);
+
+            Scene scene = new Scene(loader.load(), 800, 600);
+
+
+            stage.setTitle("Hello!");
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        System.out.println("le bouton est cliqué.");
+
+    }
     @FXML
     private void OpenNewPageAffectation(Tache tache) {
 
@@ -208,6 +254,52 @@ public class ProjetGestionController {
             // Mettre à jour le texte du label dans le contrôleur
             projetAffectattionEmployeTache.setProjetreferent(projetreferent);
             projetAffectattionEmployeTache.setTache(tache);
+
+
+
+            Scene scene = new Scene(loader.load(), 800, 600);
+
+
+
+            stage.setTitle("Page de controle");
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        System.out.println("le bouton est cliqué.");
+
+    }
+    @FXML
+    private void OpenNewPageCreationtache() {
+
+        System.out.println(stage);
+
+        if (stage != null) {
+
+            stage.setTitle("Nouvelle page");
+            System.out.println("Page ouverte.");
+
+
+        } else {
+            System.out.println("Le stage est null");
+
+        }
+
+        try {
+
+
+            // Charger la nouvelle page (Page2.fxml)
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("creationtache.fxml"));
+
+            ProjetCreationTacheController projetCreationTacheController= loader.getController();
+
+            // Mettre à jour le texte du label dans le contrôleur
+            projetCreationTacheController.setProjet(projetreferent);
+
 
 
 

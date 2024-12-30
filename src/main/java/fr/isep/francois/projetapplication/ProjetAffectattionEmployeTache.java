@@ -149,5 +149,53 @@ public class ProjetAffectattionEmployeTache {
 
     }
 
+    @FXML
+    public void retour(){
+
+        OpenNewPagegestionprojet(projetreferent);
+    }
+    @FXML
+    private void OpenNewPagegestionprojet(Projet projet) {
+
+        System.out.println(stage);
+
+        if (stage != null) {
+
+            stage.setTitle("Nouvelle page");
+            System.out.println("Page ouverte.");
+
+
+        } else {
+            System.out.println("Le stage est null");
+
+        }
+
+        try {
+
+
+            // Charger la nouvelle page (Page2.fxml)
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("ProgetGestion.fxml"));
+            Scene scene = new Scene(loader.load(), 800, 600);
+
+            ProjetGestionController projetGestionController = loader.getController();
+
+            // Mettre à jour le texte du label dans le contrôleur
+            projetGestionController.setProjetreferent(projet);
+            projetGestionController.informationname();
+
+
+            stage.setTitle("Gestion du Projet");
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        System.out.println("le bouton est cliqué.");
+
+    }
+
 
 }

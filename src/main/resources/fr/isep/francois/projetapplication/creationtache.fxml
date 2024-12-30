@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="20.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.isep.francois.projetapplication.ProjetCreationTacheController">
+    <padding>
+
+
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+
+
+
+
+    </padding>
+    <Label text="Création d'une tache" />
+   <Label text="Nom :" />
+   <TextField fx:id="nom" />
+    <ComboBox fx:id="priorité" prefWidth="150.0" promptText="Priorité">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="faible" />
+                <String fx:value="moyenne" />
+                <String fx:value="élevée" />
+            </FXCollections>
+        </items>
+    </ComboBox>
+   <Label text="Description de la tache :" />
+   <TextArea fx:id="description" prefHeight="200.0" prefWidth="200.0" />
+   <Button mnemonicParsing="false" onAction="#creationtache" text="Créer" />
+
+
+
+    <Button fx:id="acceuil" mnemonicParsing="false" onAction="#retourProjet" text="Retour Projet" />
+
+
+
+
+
+
+
+
+</VBox>

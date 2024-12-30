@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="20.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.isep.francois.projetapplication.Projetajoutemploye">
+    <padding>
+
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+
+
+    </padding>
+    <Label text="Role :" />
+    <TextField fx:id="role" />
+
+
+    <Label text="Ajout d'employe au Projet" />
+    <ListView fx:id="listViewEmployes" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="400.0" />
+   <Label fx:id="message" style="-fx-text-fill: red;" />
+
+   <Button mnemonicParsing="false" onAction="#retour" text="retour projet" />
+
+
+
+</VBox>
