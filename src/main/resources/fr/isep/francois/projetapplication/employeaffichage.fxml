@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="20.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.isep.francois.projetapplication.EmployeAffichageController">
+    <padding>
+
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+
+
+    </padding>
+   <Label fx:id="nom" text="label" />
+   <Label fx:id="prenom" text="Label" />
+   <Label fx:id="age" text="Label" />
+   <Label fx:id="identifiant" layoutX="60.0" layoutY="276.0" text="Label" />
+   <Label fx:id="type" layoutX="66.0" layoutY="313.0" text="Label" />
+   <Label fx:id="dateembauche" layoutX="68.0" layoutY="426.0" text="Label" />
+   <Button mnemonicParsing="false" onAction="#OpenNewPageEmploye" text="Retour à la gestion Employé" />
+
+
+
+
+</VBox>

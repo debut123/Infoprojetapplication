@@ -21,6 +21,8 @@ public class ProjetController {
 
     private static Stage stage;  // Déclarer un champ Stage
 
+
+
     private static List<Projet> listeProjets;  // Liste des projets à afficher
 
     private Projet projetsaisi;
@@ -41,6 +43,9 @@ public class ProjetController {
     public static void setListeProjets(List<Projet> listeProjets) {
         ProjetController.listeProjets = listeProjets;
 
+    }
+    public static List<Projet> getListeProjets() {
+        return listeProjets;
     }
 
     public ProjetController() {
@@ -142,6 +147,42 @@ public class ProjetController {
         System.out.println("le bouton est cliqué.");
 
     }
+
+    @FXML
+    private void OpenNewPagecreationprojet() {
+
+        System.out.println(stage);
+
+        if (stage != null) {
+
+            stage.setTitle("Nouvelle page");
+            System.out.println("Page ouverte.");
+
+
+        } else {
+            System.out.println("Le stage est null");
+
+        }
+
+        try {
+
+
+            // Charger la nouvelle page (Page2.fxml)
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("creationprojet.fxml"));
+            Scene scene = new Scene(loader.load(), 800, 600);
+            stage.setTitle("Creation d'un nouveau projet");
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        System.out.println("le bouton est cliqué.");
+
+    }
+
 
     @FXML
     private void OpenNewPagegestionprojet(Projet projet) {

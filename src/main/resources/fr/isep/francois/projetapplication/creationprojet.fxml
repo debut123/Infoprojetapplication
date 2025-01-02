@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<VBox alignment="CENTER" spacing="20.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.isep.francois.projetapplication.ProjetAffectattionEmployeTache">
+<VBox alignment="CENTER" spacing="20.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.isep.francois.projetapplication.ProjetCreationController">
     <padding>
 
 
@@ -16,8 +14,14 @@
 
 
     </padding>
-    <Label text="Création d'un nouveau Projet" />
-    <Button fx:id="acceuil" mnemonicParsing="false" text="Retour Acceuil" />
+    <Label text="Création d'un nouveau Projet :" />
+   <Label text="Nom : " />
+   <TextField fx:id="nomprojet" />
+   <Label text="date limite :" />
+   <DatePicker fx:id="datelimite" />
+   <Label text="Budjet :" />
+   <TextField fx:id="budjet" />
+    <Button fx:id="projet" mnemonicParsing="false" onAction="#creationprojet" text="Retour Projet " />
 
 
 

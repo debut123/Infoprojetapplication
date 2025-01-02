@@ -34,6 +34,8 @@ public class HelloApplication extends Application {
         ProjetAffectattionEmployeTache projetAffectattionEmployeTache=new ProjetAffectattionEmployeTache();
         Projetajoutemploye projetajoutemploye=new Projetajoutemploye();
         ProjetCreationTacheController projetCreationTacheController=new ProjetCreationTacheController();
+        ProjetCreationController projetCreationController=new ProjetCreationController();
+        EmployeAffichageController employeAffichageController=new EmployeAffichageController();
 
 
 
@@ -51,6 +53,8 @@ public class HelloApplication extends Application {
             projetAffectattionEmployeTache.setStage(stage);
             projetajoutemploye.setStage(stage);
             projetCreationTacheController.setStage(stage);
+            projetCreationController.setStage(stage);
+            employeAffichageController.setStage(stage);
 
 
             System.out.println("Contrôleur correctement initialisé.");

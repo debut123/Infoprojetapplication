@@ -104,6 +104,13 @@ public class ProjetGestionController {
 
                         initialize();}
                 );
+                // Ajouter un événement pour le bouton de suppression
+                information.setOnAction(event -> {
+                    EmployeAffichageController.setEmploye(employe);
+                    OpenNewPageEmployeaffichage();
+
+                        }
+                );
 
                 // Ajouter le label et le bouton à la HBox
                 hbox.getChildren().addAll(labelEmploye, boutonSuppression,information);
@@ -319,6 +326,41 @@ public class ProjetGestionController {
         System.out.println("le bouton est cliqué.");
 
     }
+    @FXML
+    private void OpenNewPageEmployeaffichage() {
+
+        System.out.println(stage);
+
+        if (stage != null) {
+
+            stage.setTitle("Nouvelle page");
+            System.out.println("Page ouverte.");
+
+
+        } else {
+            System.out.println("Le stage est null");
+
+        }
+
+        try {
+
+
+            // Charger la nouvelle page (Page2.fxml)
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("employeaffichage.fxml"));
+            Scene scene = new Scene(loader.load(), 800, 600);
+            stage.setTitle("Gestion des emplyés");
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        System.out.println("le bouton est cliqué.");
+
+    }
+
 
 
 

@@ -20,7 +20,7 @@
 
 
 
-    <Button mnemonicParsing="false" text="Projet" />
+    <Button mnemonicParsing="false" onAction="#OpenNewPagecreationprojet" text="ajouter un Projet" />
    <Button mnemonicParsing="false" onAction="#OpenNewPageaccueil" text="Retour acceuil" />
 
 </VBox>

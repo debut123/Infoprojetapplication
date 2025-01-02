@@ -71,6 +71,10 @@ public class EmployeController {
 
                         " date d'embauche "+employe.getDate_embauche());
 
+                EmployeAffichageController.setEmploye(employe);
+                OpenNewPageEmployeaffichage();
+
+
                 // Action à faire lorsque le bouton est cliqué
                 //afficherDetailsEmploye(employe);
             });
@@ -175,6 +179,41 @@ public class EmployeController {
         System.out.println("le bouton est cliqué.");
 
     }
+    @FXML
+    private void OpenNewPageEmployeaffichage() {
+
+        System.out.println(stage);
+
+        if (stage != null) {
+
+            stage.setTitle("Nouvelle page");
+            System.out.println("Page ouverte.");
+
+
+        } else {
+            System.out.println("Le stage est null");
+
+        }
+
+        try {
+
+
+            // Charger la nouvelle page (Page2.fxml)
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("employeaffichage.fxml"));
+            Scene scene = new Scene(loader.load(), 800, 600);
+            stage.setTitle("Gestion des emplyés");
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        System.out.println("le bouton est cliqué.");
+
+    }
+
     @FXML
     private void OpenNewPagecreationemploye() {
 

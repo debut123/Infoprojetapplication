@@ -131,6 +131,9 @@ public class Projet {
     public void ajouterProjet(Projet projet) {
         if (!this.listeProjets.contains(projet)) {
             this.listeProjets.add(projet);
+            //ProjetController projetController=new ProjetController();
+            //projetController
+            ProjetController.setListeProjets(listeProjets);
         }
 
     }
