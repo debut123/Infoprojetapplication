@@ -23,6 +23,7 @@
     <Label text="Tâches :" />
     <ListView fx:id="listViewTaches" />
    <Button mnemonicParsing="false" onAction="#OpenNewPageCreationtache" text="Ajouter tache" />
+   <Button mnemonicParsing="false" onAction="#ecrireCSV_rapport" text="générer un rapport" />
 
    <Button mnemonicParsing="false" onAction="#OpenNewPageaccueil" text="Retour Acceuil" />
 

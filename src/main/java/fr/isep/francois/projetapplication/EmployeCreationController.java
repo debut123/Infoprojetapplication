@@ -38,6 +38,9 @@ public class EmployeCreationController {
     @FXML
     private TextField identifiant;
 
+    @FXML
+    private Label information;
+
 
     @FXML
     protected void nouvelemploye() {
@@ -63,15 +66,35 @@ public class EmployeCreationController {
             int id = Integer.parseInt(identifiantEmploye);
             int ageInt = Integer.parseInt(ageEmploye);
 
+
+
             // Créer un nouvel employé
             Employe nouvelEmploye = new Employe(id, nomEmploye, prenomEmploye, ageInt, typeEmploye, new ArrayList<>(), null);
-            nouvelEmploye.ajouter_employe(id, nomEmploye, prenomEmploye, ageInt, typeEmploye, new ArrayList<>(), null);
+            Boolean identifiantdejautilise=false;
+            for (Employe employe: nouvelEmploye.getListe_employe()){
 
-            if (parentController != null) {
+                if (employe.getIdentifiant()==id){
 
-                parentController.updateEmployeeList();
+                    System.out.println("L'identifiant est déjà utilisé :");
+
+                    information.setText("L'identifiant est déjà utilisé");
+                    information.setStyle("-fx-text-fill: red;");
+                    identifiantdejautilise=true;
+
+
+
+                }
             }
-            OpenNewPageEmploye();
+            if (!identifiantdejautilise) {
+                nouvelEmploye.ajouter_employe(id, nomEmploye, prenomEmploye, ageInt, typeEmploye, new ArrayList<>(), null);
+                if (parentController != null) {
+
+                    parentController.updateEmployeeList();
+                }
+                OpenNewPageEmploye();
+
+            }
+
 
         } catch (NumberFormatException e) {
             System.out.println("exeption erreur l'identifiant ou l'age n'est pas un entier.");

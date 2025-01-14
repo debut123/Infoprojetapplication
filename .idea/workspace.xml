@@ -4,18 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0821cde0-54ce-463c-b4b7-a1b68ce7d898" name="Changes" comment="deuxième version 30 decembre">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/EmployeAffichageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/employeaffichage.fxml" afterDir="false" />
+    <list default="true" id="0821cde0-54ce-463c-b4b7-a1b68ce7d898" name="Changes" comment="3ème version jeudi 2 janvier">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/EmployeModifierController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/ProjetModifierController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/TacheAffichageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/employeModifier.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/projetModifier.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/tacheaffichage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/Demo_CSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/Demo_CSV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/Employe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/Employe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/EmployeAffichageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/EmployeAffichageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/EmployeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/EmployeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/EmployeCreationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/EmployeCreationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/Projet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/Projet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/ProjetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/ProjetController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/ProjetCreationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/ProjetCreationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/ProjetCreationTacheController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/ProjetCreationTacheController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/ProjetGestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/ProjetGestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/Projet.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/Projet.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/creationprojet.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/creationprojet.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/Projetajoutemploye.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/Projetajoutemploye.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/ProgetGestion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/ProgetGestion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/employe_creation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/employe_creation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/employeaffichage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/employeaffichage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,26 +40,26 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "debut123"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;debut123&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/debut123/Infoprojetapplication.git",
-    "accountId": "3609ab8b-ecf1-400d-a059-627231d68cb3"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/debut123/Infoprojetapplication.git&quot;,
+    &quot;accountId&quot;: &quot;3609ab8b-ecf1-400d-a059-627231d68cb3&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -67,19 +79,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Demo_CSV.executor": "Run",
-    "Application.HelloApplication.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/Users/frdch/IdeaProjects/Projetapplication/src/main/java/fr/isep/francois/projetapplication",
-    "settings.editor.selected.configurable": "vcs.Git"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Demo_CSV.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/frdch/IdeaProjects/Projetapplication/src/main/java/fr/isep/francois/projetapplication&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\frdch\IdeaProjects\Projetapplication" />
@@ -152,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735598754200</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="3ème version jeudi 2 janvier">
+      <option name="closed" value="true" />
+      <created>1735839761262</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1735839761262</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -173,6 +193,7 @@
     <MESSAGE value="Premier commit" />
     <MESSAGE value="premiere version" />
     <MESSAGE value="deuxième version 30 decembre" />
-    <option name="LAST_COMMIT_MESSAGE" value="deuxième version 30 decembre" />
+    <MESSAGE value="3ème version jeudi 2 janvier" />
+    <option name="LAST_COMMIT_MESSAGE" value="3ème version jeudi 2 janvier" />
   </component>
 </project>

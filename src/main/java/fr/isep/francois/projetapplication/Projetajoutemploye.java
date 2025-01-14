@@ -124,7 +124,7 @@ public class Projetajoutemploye {
 
             // Charger la nouvelle page (Page2.fxml)
             FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("ProgetGestion.fxml"));
-            Scene scene = new Scene(loader.load(), 800, 600);
+            Scene scene = new Scene(loader.load(), 1200, 900);
 
             ProjetGestionController projetGestionController = loader.getController();
 
@@ -132,7 +132,7 @@ public class Projetajoutemploye {
             projetGestionController.setProjetreferent(projet);
             projetGestionController.informationname();
 
-
+            stage.centerOnScreen();
             stage.setTitle("Gestion du Projet");
             stage.setScene(scene);
             stage.show();

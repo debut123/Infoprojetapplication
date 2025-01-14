@@ -115,7 +115,7 @@ public void ajouter_employe(int identifiant, String nom, String prenom,
                                    int age, String type, ArrayList<String> liste_projet_realise,
                                    LocalDate date_emboche){
 
-        Employe employe=new Employe(identifiant, nom, prenom, age, type, liste_projet_realise, date_embauche);
+        Employe employe=new Employe(identifiant, nom, prenom, age, type, liste_projet_realise, date_emboche);
         liste_employe.add(employe);
 }
 

@@ -1,5 +1,6 @@
 package fr.isep.francois.projetapplication;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -9,7 +10,10 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVPrinter;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -120,6 +124,10 @@ public class ProjetGestionController {
             }
         }
     }
+
+
+
+
     // Méthode pour afficher les tâches dans la ListView
     private void afficherTaches() {
         if (projetreferent != null && projetreferent.getListe_tache_projet() != null) {
@@ -132,12 +140,19 @@ public class ProjetGestionController {
 
 
                 Button affectation=new Button("affecter des employés:");
+                Button affichage=new Button("information");
 
                 // Ajouter un événement pour le bouton de suppression
                 affectation.setOnAction(event -> {
 
                     OpenNewPageAffectation(tache);
                 });
+                affichage.setOnAction(event -> {
+                    TacheAffichageController.setProjet(projetreferent);
+                    OpenNewPageaffichageTache(tache);
+
+                });
+
                 boutonSuppression.setOnAction(event -> {
 
                     tache.supprimerTache(projetreferent.getListe_tache_projet(),tache);
@@ -145,7 +160,7 @@ public class ProjetGestionController {
                 });
 
                 // Ajouter le label et le bouton à la HBox
-                hbox.getChildren().addAll(labelTache, boutonSuppression,affectation);
+                hbox.getChildren().addAll(labelTache, boutonSuppression,affectation,affichage);
 
                 // Ajouter la HBox à la ListView des tâches
                 listViewTaches.getItems().add(hbox);
@@ -346,9 +361,80 @@ public class ProjetGestionController {
 
 
             // Charger la nouvelle page (Page2.fxml)
+            EmployeAffichageController.setProjet(projetreferent);
             FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("employeaffichage.fxml"));
             Scene scene = new Scene(loader.load(), 800, 600);
-            stage.setTitle("Gestion des emplyés");
+            stage.setTitle("Gestion des employés");
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        System.out.println("le bouton est cliqué.");
+
+    }
+    @FXML
+    private void OpenNewPageaffichageTache(Tache tache) {
+
+        //System.out.println(stage);
+
+        if (stage != null) {
+
+            stage.setTitle("Nouvelle page");
+            System.out.println("Page ouverte.");
+
+
+        } else {
+            System.out.println("Le stage est null");
+
+        }
+
+        try {
+
+
+            // Charger la nouvelle page (Page2.fxml)
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("tacheaffichage.fxml"));
+            TacheAffichageController.setTache(tache);
+            Scene scene = new Scene(loader.load(), 800, 600);
+            stage.setTitle("Tache");
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        System.out.println("le bouton est cliqué.");
+
+    }
+    @FXML
+    private void OpenNewPagemodifierTache(Tache tache) {
+
+        //System.out.println(stage);
+
+        if (stage != null) {
+
+            stage.setTitle("Nouvelle page");
+            System.out.println("Page ouverte.");
+
+
+        } else {
+            System.out.println("Le stage est null");
+
+        }
+
+        try {
+
+
+            // Charger la nouvelle page (Page2.fxml)
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("tacheaffichage.fxml"));
+            TacheAffichageController.setTache(tache);
+            Scene scene = new Scene(loader.load(), 800, 600);
+            stage.setTitle("Tache");
             stage.setScene(scene);
             stage.show();
 
@@ -363,5 +449,50 @@ public class ProjetGestionController {
 
 
 
+
+    @FXML
+    public void ecrireCSV_rapport(ActionEvent actionEvent) {
+        try (FileWriter fch = new FileWriter("rapport_projets.csv")) { // Nom de fichier CSV
+            // Définition du format CSV avec un en-tête
+            CSVFormat csvFormat = CSVFormat.DEFAULT.builder()
+                    .setHeader(new String[]{"Nom du Projet", "Date Limite", "Budget", "Employé", "Rôle"})
+                    .build();
+
+            // Création du CSVPrinter pour écrire dans le fichier
+            CSVPrinter printer = new CSVPrinter(fch, csvFormat);
+
+            // Vérifier si la liste des projets contient des éléments
+            System.out.println("Liste des projets: " + projetreferent.getListeProjets().size());
+
+            for (Projet projet : projetreferent.getListeProjets()) {
+                System.out.println("Nom du projet: " + projet.getNom()); // Afficher le nom du projet
+                String nomProjet = projet.getNom();
+                String dateLimite = projet.getDate_limite().toString(); // Formater la date selon vos besoins
+                int budget = projet.getBudget();
+
+                // Vérifier si la liste des employés est correcte
+                System.out.println("Nombre d'employés dans le projet: " + projet.getListe2_employe_projet().size());
+
+                for (Map.Entry<Employe, String> entry : projet.getListe2_employe_projet().entrySet()) {
+                    Employe employe = entry.getKey();
+                    String role = entry.getValue();
+
+                    System.out.println("Employé: " + employe.getNom() + " - Rôle: " + role); // Afficher les informations sur l'employé
+
+                    // Écrire dans le fichier CSV
+
+                }
+                printer.printRecord("nom : "+nomProjet+" date limite: "+dateLimite+" Budjet : "+budget);
+                //printer.printRecord("test de printer.");
+            }
+
+            // Fermer le printer une fois l'écriture terminée
+            printer.flush();
+            System.out.println("Le rapport a été écrit avec succès dans le fichier CSV.");
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Erreur lors de l'écriture dans le fichier CSV.");
+        }
+    }
 
 }

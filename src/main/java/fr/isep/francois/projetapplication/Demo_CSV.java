@@ -19,6 +19,15 @@ import java.util.Map;
 
 public class Demo_CSV {
 
+
+
+
+    private static Projet projet;
+
+    public static void setProjet(Projet projet) {
+        Demo_CSV.projet = projet;
+    }
+
     public static void main(String[] args) throws IOException {
         var vols = lireCSV();
         //ecrireCSV(vols);
@@ -77,6 +86,32 @@ public class Demo_CSV {
         in.close();
         //System.out.println(vols);
         return vols;
+    }
+
+    private static void ecrireCSV_rapport(List<Map<String, String>> vols) {
+
+        try (FileWriter fch = new FileWriter(projet.getNom()+" CSV")) {
+
+            CSVFormat csvFormat = CSVFormat.DEFAULT.builder()
+                    .setHeader(new String[]{"nom", "date", "budget", "id", "prévu à"})
+                    .build();
+
+            CSVPrinter printer = null;
+            printer = new CSVPrinter(fch, csvFormat);
+            for (var vol : vols) {
+                printer.printRecord(
+                        vol.get("Date"),
+                        vol.get("Dép"),
+                        vol.get("Arriv"),
+                        vol.get("Code"),
+                        vol.get("Heure")
+                );
+            }
+
+        } catch (IOException e) {
+            throw new RuntimeException("Problème...",e);
+        }
+        // "Close" automatique...
     }
 
 

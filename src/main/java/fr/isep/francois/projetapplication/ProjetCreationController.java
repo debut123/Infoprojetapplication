@@ -81,6 +81,7 @@ private void creationprojet(){
             // Charger la nouvelle page (hello-view.fxml)
             FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("Projet.fxml"));
             Scene scene = new Scene(loader.load(), 800, 600);
+            stage.centerOnScreen();
             stage.setTitle("Gestion Projet");
             stage.setScene(scene);
             stage.show();

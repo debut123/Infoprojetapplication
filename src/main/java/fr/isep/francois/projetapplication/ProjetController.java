@@ -81,10 +81,12 @@ public class ProjetController {
 
             Button ouvrir=new Button("ouvrir");
 
+            Button modifier=new Button("Modifier");
+
 
 
             // Ajouter le label à l'HBox
-            hbox.getChildren().addAll(label,supresion,ouvrir);
+            hbox.getChildren().addAll(label,supresion,ouvrir,modifier);
 
             // Ajouter l'HBox à la ListView
             listViewProjetsBox.getItems().add(hbox);
@@ -96,6 +98,11 @@ public class ProjetController {
                 // Action à faire lorsque le bouton est cliqué
                 //afficherDetailsEmploye(employe);
                 listeProjets.remove(projet);
+            });
+
+            modifier.setOnAction((ActionEvent e) -> {
+
+                OpenNewPagemodifierprojet(projet);
             });
 
             ouvrir.setOnAction((ActionEvent e) -> {
@@ -205,7 +212,7 @@ public class ProjetController {
 
             // Charger la nouvelle page (Page2.fxml)
             FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("ProgetGestion.fxml"));
-            Scene scene = new Scene(loader.load(), 800, 600);
+            Scene scene = new Scene(loader.load(), 1200, 900);
 
             ProjetGestionController projetGestionController = loader.getController();
 
@@ -213,7 +220,7 @@ public class ProjetController {
             projetGestionController.setProjetreferent(projet);
             projetGestionController.informationname();
 
-
+            stage.centerOnScreen();
             stage.setTitle("Gestion du Projet");
             stage.setScene(scene);
             stage.show();
@@ -226,6 +233,42 @@ public class ProjetController {
         System.out.println("le bouton est cliqué.");
 
     }
+    @FXML
+    private void OpenNewPagemodifierprojet(Projet projet) {
+
+        //System.out.println(stage);
+
+        if (stage != null) {
+
+            stage.setTitle("Nouvelle page");
+            System.out.println("Page ouverte.");
+
+
+        } else {
+            System.out.println("Le stage est null");
+
+        }
+
+        try {
+
+
+            // Charger la nouvelle page (Page2.fxml)
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("projetModifier.fxml"));
+            ProjetModifierController.setProjet(projet);
+            Scene scene = new Scene(loader.load(), 800, 600);
+            stage.setTitle("Modifier projet");
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        System.out.println("le bouton est cliqué.");
+
+    }
+
 
 
 }

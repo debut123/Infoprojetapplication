@@ -17,7 +17,12 @@
    <Label fx:id="identifiant" layoutX="60.0" layoutY="276.0" text="Label" />
    <Label fx:id="type" layoutX="66.0" layoutY="313.0" text="Label" />
    <Label fx:id="dateembauche" layoutX="68.0" layoutY="426.0" text="Label" />
-   <Button mnemonicParsing="false" onAction="#OpenNewPageEmploye" text="Retour à la gestion Employé" />
+   <Label text="Liste des Projets réalisés :" />
+
+    <ListView fx:id="listedesprojets" prefHeight="400.0" prefWidth="300.0">
+        <!-- Les projets réalisés de l'employé seront ajoutés ici -->
+    </ListView>
+   <Button mnemonicParsing="false" onAction="#ouverturepage" text="Retour à la gestion Employé" />
 
 
 

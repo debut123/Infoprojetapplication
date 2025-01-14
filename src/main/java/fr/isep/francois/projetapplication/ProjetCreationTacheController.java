@@ -53,11 +53,12 @@ public class ProjetCreationTacheController {
 
             // Message de confirmation dans la console
             System.out.println("Tâche créée : " + tache.getNom());
+            retourProjet();
         } else {
             // Afficher un message d'erreur si des champs sont vides
             System.out.println("Veuillez remplir tous les champs !");
         }
-        retourProjet();
+
     }
 
     @FXML
@@ -88,14 +89,14 @@ public class ProjetCreationTacheController {
 
             // Charger la nouvelle page (Page2.fxml)
             FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("ProgetGestion.fxml"));
-            Scene scene = new Scene(loader.load(), 800, 600);
+            Scene scene = new Scene(loader.load(), 1200, 900);
 
             ProjetGestionController projetGestionController = loader.getController();
 
             // Mettre à jour le texte du label dans le contrôleur
             projetGestionController.setProjetreferent(projet);
             projetGestionController.informationname();
-
+            stage.centerOnScreen();
 
             stage.setTitle("Gestion du Projet");
             stage.setScene(scene);

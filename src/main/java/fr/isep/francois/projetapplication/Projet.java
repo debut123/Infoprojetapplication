@@ -83,6 +83,7 @@ public class Projet {
     public void ajouterEmploye(Employe employe, String role) {
         if (!this.liste2_employe_projet.containsKey(employe)) {
             this.liste2_employe_projet.put(employe, role);
+            employe.ajouterProjet(this.getNom());
             System.out.println("L'employé a été ajouté avec le rôle: " + role);
         } else {
             System.out.println("L'employé est déjà dans le projet.");

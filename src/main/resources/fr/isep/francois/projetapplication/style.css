@@ -5,3 +5,237 @@
 .vbox {
     -fx-background-color: grey; /* gris clair */
 }
+
+/* Style pour la ListView */
+.list-view {
+    -fx-background-color: #f4f4f4; /* fond gris clair */
+    -fx-border-color: #ccc; /* bordure grise claire */
+    -fx-border-width: 1px; /* largeur de la bordure */
+    -fx-padding: 10px; /* espacement autour de la ListView */
+    -fx-font-size: 14px; /* taille de la police */
+}
+.list-view {
+    -fx-pref-width: 400px;  /* Largeur préférée */
+    -fx-pref-height: 300px; /* Hauteur préférée */
+    -fx-max-width: 600px;   /* Largeur maximale */
+    -fx-max-height: 500px;  /* Hauteur maximale */
+    -fx-min-width: 200px;   /* Largeur minimale */
+    -fx-min-height: 150px;  /* Hauteur minimale */
+}
+
+
+/* Style pour les éléments de la ListView */
+.list-view .list-cell {
+    -fx-background-color: transparent; /* fond transparent par défaut */
+    -fx-padding: 8px; /* espacement autour de chaque élément */
+    -fx-font-size: 14px; /* taille de la police des éléments */
+    -fx-text-fill: black; /* couleur du texte */
+}
+
+.list-view .list-cell:hover {
+    -fx-background-color: lightblue; /* couleur de fond lorsque survolé */
+    -fx-text-fill: black; /* couleur du texte lorsqu'on survole l'élément */
+}
+
+.list-view .list-cell:focused {
+    -fx-background-color: #cce7ff; /* fond bleu clair lorsque l'élément est sélectionné */
+    -fx-text-fill: black; /* couleur du texte lorsque l'élément est sélectionné */
+}
+
+/* Style pour l'élément sélectionné */
+.list-view .list-cell:selected {
+    -fx-background-color: #0099cc; /* fond bleu lorsqu'un élément est sélectionné */
+    -fx-text-fill: white; /* texte blanc sur fond bleu */
+}
+.button {
+    -fx-background-color: #808080; /* Gris clair par défaut */
+    -fx-text-fill: white; /* Couleur du texte en blanc */
+    -fx-font-size: 14px; /* Taille de la police */
+    -fx-padding: 10px 20px; /* Espacement interne pour agrandir le bouton */
+    -fx-border-radius: 5px; /* Coins arrondis pour les boutons */
+    -fx-background-radius: 5px; /* Coins arrondis pour l'arrière-plan */
+    -fx-border-color: #666; /* Bordure gris foncé */
+    -fx-border-width: 2px; /* Largeur de la bordure */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 2); /* Ombre portée légère */
+}
+
+/* Bouton lorsque survolé */
+.button:hover {
+    -fx-background-color: #666666; /* Fond gris plus foncé au survol */
+    -fx-text-fill: white; /* Texte blanc */
+}
+
+/* Bouton lorsque pressé */
+.button:pressed {
+    -fx-background-color: #333333; /* Fond gris foncé lorsque pressé */
+    -fx-text-fill: white; /* Texte blanc */
+    -fx-effect: none; /* Désactive l'effet de l'ombre portée lors du clic */
+}
+
+/* Bouton désactivé (non cliquable) */
+.button:disabled {
+    -fx-background-color: #d3d3d3; /* Fond gris clair désactivé */
+    -fx-text-fill: #a9a9a9; /* Texte gris clair */
+    -fx-border-color: #d3d3d3; /* Bordure gris clair */
+    -fx-border-width: 1px; /* Bordure mince */
+}
+
+/* Style pour le bouton "Annuler" ou "Reset" (exemple avec un fond rouge) */
+.button.cancel {
+    -fx-background-color: #f44336; /* Fond rouge */
+    -fx-border-color: #d32f2f; /* Bordure rouge foncé */
+}
+
+.button.cancel:hover {
+    -fx-background-color: #e53935; /* Fond rouge plus foncé au survol */
+}
+
+.button.cancel:pressed {
+    -fx-background-color: #b71c1c; /* Fond rouge très foncé lors de la pression */
+}
+
+/* Bouton avec une couleur personnalisée (par exemple, un bouton de sauvegarde en vert) */
+.button.save {
+    -fx-background-color: #4CAF50; /* Fond vert */
+    -fx-border-color: #388E3C; /* Bordure verte foncée */
+}
+
+.button.save:hover {
+    -fx-background-color: #43A047; /* Fond vert plus clair au survol */
+}
+
+.button.save:pressed {
+    -fx-background-color: #2C6B2F; /* Fond vert plus foncé lors de la pression */
+}
+/* Style par défaut pour les labels */
+.label {
+    -fx-text-fill: #333333; /* Texte gris foncé */
+    -fx-font-size: 14px; /* Taille de la police */
+    -fx-font-family: "Arial"; /* Police de caractère */
+    -fx-font-weight: bold; /* Texte en gras */
+    -fx-padding: 5px; /* Espacement interne */
+}
+
+/* Style pour un label avec un fond coloré */
+.label.highlight {
+    -fx-background-color: #FFEB3B; /* Fond jaune clair */
+    -fx-text-fill: #000000; /* Texte noir */
+    -fx-padding: 10px 15px; /* Espacement interne plus grand */
+    -fx-font-size: 16px; /* Taille de police augmentée */
+    -fx-border-radius: 5px; /* Coins arrondis */
+    -fx-border-color: #FF9800; /* Bordure orange */
+    -fx-border-width: 2px; /* Largeur de la bordure */
+}
+
+/* Style pour un label d'avertissement (exemple avec fond rouge) */
+.label.warning {
+    -fx-background-color: #FF5722; /* Fond rouge */
+    -fx-text-fill: white; /* Texte blanc */
+    -fx-padding: 10px 20px; /* Espacement interne */
+    -fx-font-size: 14px; /* Taille de la police */
+    -fx-font-weight: normal; /* Police normale */
+    -fx-border-radius: 5px; /* Coins arrondis */
+    -fx-border-color: #D32F2F; /* Bordure rouge foncé */
+    -fx-border-width: 2px; /* Largeur de la bordure */
+}
+
+/* Style pour un label de succès (fond vert) */
+.label.success {
+    -fx-background-color: #4CAF50; /* Fond vert */
+    -fx-text-fill: white; /* Texte blanc */
+    -fx-padding: 10px 20px; /* Espacement interne */
+    -fx-font-size: 14px; /* Taille de la police */
+    -fx-font-weight: bold; /* Texte en gras */
+    -fx-border-radius: 5px; /* Coins arrondis */
+    -fx-border-color: #388E3C; /* Bordure verte foncée */
+    -fx-border-width: 2px; /* Largeur de la bordure */
+}
+
+/* Style pour un label désactivé (couleur gris clair) */
+.label.disabled {
+    -fx-text-fill: #BDBDBD; /* Texte gris clair */
+    -fx-opacity: 0.5; /* Rendre le label semi-transparent pour signaler qu'il est désactivé */
+}
+/* Appliquer un fond d'écran à un VBox, AnchorPane ou tout autre conteneur */
+.root {
+    -fx-background-image: url("images/background.jpg"); /* Spécifiez le chemin de votre image */
+    -fx-background-size: cover; /* Couvrir toute la zone */
+    -fx-background-position: center center; /* Centrer l'image */
+    -fx-background-repeat: no-repeat; /* Ne pas répéter l'image */
+}
+
+/* Vous pouvez également ajouter un fond d'écran à un conteneur spécifique, comme un VBox */
+.vbox {
+    -fx-background-image: url("images/background.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+}
+
+/* Exemple pour un AnchorPane */
+.anchor-pane {
+    -fx-background-image: url("images/background.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+}
+.button {
+    -fx-background-color: #808080; /* Gris clair par défaut */
+    -fx-text-fill: white; /* Couleur du texte en blanc */
+    -fx-font-size: 12px; /* Taille de la police réduite */
+    -fx-padding: 5px 10px; /* Espacement interne réduit pour un bouton plus petit */
+    -fx-border-radius: 5px; /* Coins arrondis pour les boutons */
+    -fx-background-radius: 5px; /* Coins arrondis pour l'arrière-plan */
+    -fx-border-color: #666; /* Bordure gris foncé */
+    -fx-border-width: 2px; /* Largeur de la bordure */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 2); /* Ombre portée légère */
+}
+
+/* Bouton lorsque survolé */
+.button:hover {
+    -fx-background-color: #666666; /* Fond gris plus foncé au survol */
+    -fx-text-fill: white; /* Texte blanc */
+}
+
+/* Bouton lorsque pressé */
+.button:pressed {
+    -fx-background-color: #333333; /* Fond gris foncé lorsque pressé */
+    -fx-text-fill: white; /* Texte blanc */
+    -fx-effect: none; /* Désactive l'effet de l'ombre portée lors du clic */
+}
+
+/* Bouton désactivé (non cliquable) */
+.button:disabled {
+    -fx-background-color: #d3d3d3; /* Fond gris clair désactivé */
+    -fx-text-fill: #a9a9a9; /* Texte gris clair */
+    -fx-border-color: #d3d3d3; /* Bordure gris clair */
+    -fx-border-width: 1px; /* Bordure mince */
+}
+
+/* Style pour le bouton "Annuler" ou "Reset" (exemple avec un fond rouge) */
+.button.cancel {
+    -fx-background-color: #f44336; /* Fond rouge */
+    -fx-border-color: #d32f2f; /* Bordure rouge foncé */
+}
+
+.button.cancel:hover {
+    -fx-background-color: #e53935; /* Fond rouge plus foncé au survol */
+}
+
+.button.cancel:pressed {
+    -fx-background-color: #b71c1c; /* Fond rouge très foncé lors de la pression */
+}
+
+/* Bouton avec une couleur personnalisée (par exemple, un bouton de sauvegarde en vert) */
+.button.save {
+    -fx-background-color: #4CAF50; /* Fond vert */
+    -fx-border-color: #388E3C; /* Bordure verte foncée */
+}
+
+.button.save:hover {
+    -fx-background-color: #43A047; /* Fond vert plus clair au survol */
+}
+
+.button.save:pressed {
+    -fx-background-color: #2C6B2F; /* Fond vert plus foncé lors de la pression */
+}

@@ -22,6 +22,7 @@
    <TextField fx:id="age" />
    <Label text="Rôle :" />
    <TextField fx:id="type" />
+   <Label fx:id="information" />
     <Button fx:id="enregistrement" mnemonicParsing="false" onAction="#nouvelemploye" text="Enregistrer" />
 
 </VBox>

@@ -59,6 +59,11 @@ public class EmployeController {
 
             Button historique= new Button("historique");
 
+            Button modifier = new Button("Modifier");
+            modifier.setOnAction((ActionEvent e) -> {
+                OpenNewPagemodifieremploye(employe);
+            });
+
             // Associer une action au bouton
             button.setOnAction((ActionEvent e) -> {
 
@@ -109,7 +114,7 @@ public class EmployeController {
             });
 
             // Ajouter le label et le bouton à l'HBox
-            hbox.getChildren().addAll(label, button,supresion,historique);
+            hbox.getChildren().addAll(label, button,supresion,historique,modifier);
 
             // Ajouter l'HBox à la ListView
             //listViewEmployes.getItems().add(String.valueOf(hbox));
@@ -268,6 +273,39 @@ public class EmployeController {
 
 
         System.out.println("le bouton est cliqué.");
+
+    }
+    private void OpenNewPagemodifieremploye(Employe employe) {
+        if (stage != null) {
+            stage.setTitle("Nouvelle page");
+            System.out.println("Page ouverte.");
+        }
+        else {
+            System.out.println("Le stage est null");
+        }
+
+        try {
+            EmployeModifierController.setEmploye(employe);
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("employeModifier.fxml"));
+
+            Scene scene = new Scene(loader.load(), 400, 600);
+
+            EmployeModifierController modifyEmpController = loader.getController();
+            System.out.println("Le controller fille est " + modifyEmpController);
+            modifyEmpController.setParentController(this);
+
+            stage.setTitle("Page de modifications de l'employÃ©");
+            stage.setScene(scene);
+            stage.show();
+
+            modifyEmpController.initialize();
+
+        } catch (IOException e) {
+            System.out.println("Erreur lors du chargement du fichier FXML : " + e.getMessage());
+            e.printStackTrace();
+        }
+
+        System.out.println("Le bouton modifier est cliquÃ©.");
 
     }
 }
