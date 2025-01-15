@@ -294,7 +294,7 @@ public class EmployeController {
             System.out.println("Le controller fille est " + modifyEmpController);
             modifyEmpController.setParentController(this);
 
-            stage.setTitle("Page de modifications de l'employÃ©");
+            stage.setTitle("Page de modifications de l'employé");
             stage.setScene(scene);
             stage.show();
 
@@ -305,7 +305,7 @@ public class EmployeController {
             e.printStackTrace();
         }
 
-        System.out.println("Le bouton modifier est cliquÃ©.");
+        System.out.println("Le bouton modifier est cliqué.");
 
     }
 }
