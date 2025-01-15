@@ -55,7 +55,7 @@ public class EmployeController {
             // Créer un bouton pour l'employé
             Button button = new Button("Information");
 
-            Button supresion=new Button("suprimer");
+            Button suppresion = new Button("Supprimer");
 
             Button historique= new Button("historique");
 
@@ -84,7 +84,7 @@ public class EmployeController {
                 //afficherDetailsEmploye(employe);
             });
             // Associer une action au bouton
-            supresion.setOnAction((ActionEvent e) -> {
+            suppresion.setOnAction((ActionEvent e) -> {
 
                 employe.suprimer_employe(employe.getIdentifiant());
                 populateEmployeeList();
@@ -114,7 +114,7 @@ public class EmployeController {
             });
 
             // Ajouter le label et le bouton à l'HBox
-            hbox.getChildren().addAll(label, button,supresion,historique,modifier);
+            hbox.getChildren().addAll(label, button, suppresion, historique, modifier);
 
             // Ajouter l'HBox à la ListView
             //listViewEmployes.getItems().add(String.valueOf(hbox));
