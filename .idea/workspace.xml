@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0821cde0-54ce-463c-b4b7-a1b68ce7d898" name="Changes" comment="4 ème version mardi 14 janvier avec les modifications de Louis.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/CalendrierController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/calendrier.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/Controle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/Controle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/Projet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/Projet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/controle.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/controle.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="0821cde0-54ce-463c-b4b7-a1b68ce7d898" name="Changes" comment="4 ème version mardi 14 janvier avec les modifications de Louis." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
