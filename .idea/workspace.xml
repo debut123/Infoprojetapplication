@@ -4,30 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0821cde0-54ce-463c-b4b7-a1b68ce7d898" name="Changes" comment="3ème version jeudi 2 janvier">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/EmployeModifierController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/ProjetModifierController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/TacheAffichageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/employeModifier.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/projetModifier.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/tacheaffichage.fxml" afterDir="false" />
+    <list default="true" id="0821cde0-54ce-463c-b4b7-a1b68ce7d898" name="Changes" comment="4 ème version mardi 14 janvier avec les modifications de Louis.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/CalendrierController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/calendrier.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/Demo_CSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/Demo_CSV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/Employe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/Employe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/EmployeAffichageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/EmployeAffichageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/EmployeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/EmployeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/EmployeCreationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/EmployeCreationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/Controle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/Controle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/Projet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/Projet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/ProjetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/ProjetController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/ProjetCreationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/ProjetCreationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/ProjetCreationTacheController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/ProjetCreationTacheController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/ProjetGestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/ProjetGestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/Projetajoutemploye.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/Projetajoutemploye.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/ProgetGestion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/ProgetGestion.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/employe_creation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/employe_creation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/employeaffichage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/employeaffichage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/controle.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/controle.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -172,7 +156,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735839761262</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="4 ème version mardi 14 janvier avec les modifications de Louis.">
+      <option name="closed" value="true" />
+      <created>1736892951824</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1736892951824</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -194,6 +186,7 @@
     <MESSAGE value="premiere version" />
     <MESSAGE value="deuxième version 30 decembre" />
     <MESSAGE value="3ème version jeudi 2 janvier" />
-    <option name="LAST_COMMIT_MESSAGE" value="3ème version jeudi 2 janvier" />
+    <MESSAGE value="4 ème version mardi 14 janvier avec les modifications de Louis." />
+    <option name="LAST_COMMIT_MESSAGE" value="4 ème version mardi 14 janvier avec les modifications de Louis." />
   </component>
 </project>

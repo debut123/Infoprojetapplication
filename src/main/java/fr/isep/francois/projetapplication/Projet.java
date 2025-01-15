@@ -16,7 +16,8 @@ public class Projet {
     public ArrayList<Projet> listeProjets;
     private int budget;  // Attribut budget ajouté
 
-
+    public Projet() {
+    }
 
     public ArrayList<Projet> getListeProjets() {
         return listeProjets;

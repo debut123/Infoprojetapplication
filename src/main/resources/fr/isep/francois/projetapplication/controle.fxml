@@ -14,6 +14,7 @@
     <Label text="Page de controle" />
    <Button mnemonicParsing="false" onAction="#OpenNewPageProjet" text="Projet" />
    <Button mnemonicParsing="false" onAction="#OpenNewPageEmploye" text="Employe" />
+   <Button mnemonicParsing="false" onAction="#OpenNewPagecalendrier" text="calendrier" />
 
 
     <Button mnemonicParsing="false" onAction="#OpenNewPage" text="Retour acceuil" />
