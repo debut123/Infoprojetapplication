@@ -3,6 +3,7 @@ package fr.isep.francois.projetapplication;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Projet {
@@ -135,7 +136,10 @@ public class Projet {
             this.listeProjets.add(projet);
             //ProjetController projetController=new ProjetController();
             //projetController
-            ProjetController.setListeProjets(listeProjets);
+            List<Projet> listeprojetajout=ProjetController.getListeProjets();
+            listeprojetajout.add(projet);
+
+            ProjetController.setListeProjets(listeprojetajout);
         }
 
     }

@@ -4,6 +4,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -31,6 +35,17 @@ public class ProjetController {
 
     @FXML
     private Button Acceuil; // Assurez-vous d'avoir une référence à ce bouton
+
+    @FXML
+    private CategoryAxis liste_nom_projet;  // Axe des noms des projets
+    @FXML
+    private NumberAxis liste_budjet;        // Axe des budgets
+
+    @FXML
+    private BarChart<String, Number> budgetBarChart;  // Le graphique
+
+    private List<Projet> projetsList;  // Liste des projets à afficher
+
 
 
 
@@ -119,6 +134,30 @@ public class ProjetController {
 
             });
         }
+
+        // Vérifier si l'élément graphique a bien été injecté
+        if (budgetBarChart == null) {
+            System.err.println("Erreur : budgetBarChart n'a pas été correctement injecté.");
+            return;
+        }
+
+        if (listeProjets!=null) {
+// Créer une série de données pour le graphique
+    XYChart.Series<String, Number> series = new XYChart.Series<>();
+    series.setName("Projets");
+
+    // Ajouter les données des projets dans la série
+    for (Projet projet : listeProjets) {
+        // Ajouter un projet à la série (nom du projet, budget)
+        series.getData().add(new XYChart.Data<>(projet.getNom(), projet.getBudget()));
+    }
+
+    // Ajouter la série au graphique
+    budgetBarChart.getData().add(series);
+
+
+}
+
     }
     @FXML
     private void OpenNewPageaccueil() {

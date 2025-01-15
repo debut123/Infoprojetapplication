@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
@@ -142,6 +143,33 @@ public class ProjetGestionController {
                 Button affectation=new Button("affecter des employés:");
                 Button affichage=new Button("information");
 
+                CheckBox etat=new CheckBox("état");
+
+                etat.setOnAction(e -> {
+                    if (etat.isSelected()) {
+                        if (tache.getEtat() == "en_cours") {
+                            tache.setEtat("Validé");
+
+                            // Action lorsque la case est cochée
+                        } else if (tache.getEtat() == "à faire") {
+
+                            tache.setEtat("Validé");
+
+                        }
+
+                        else{
+
+                            tache.setEtat("Validé");
+                        }
+                        System.out.println("La tache est "+tache.getEtat());
+
+                    } else {
+                        //System.out.println("La ta");
+                        // Action lorsque la case n'est pas cochée
+                    }
+                });
+
+
                 // Ajouter un événement pour le bouton de suppression
                 affectation.setOnAction(event -> {
 
@@ -160,7 +188,7 @@ public class ProjetGestionController {
                 });
 
                 // Ajouter le label et le bouton à la HBox
-                hbox.getChildren().addAll(labelTache, boutonSuppression,affectation,affichage);
+                hbox.getChildren().addAll(labelTache, boutonSuppression,affectation,affichage,etat);
 
                 // Ajouter la HBox à la ListView des tâches
                 listViewTaches.getItems().add(hbox);
