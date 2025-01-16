@@ -50,7 +50,7 @@ public class EmployeModifierController {
         String dateEmbauche = dateEmbaucheChamps.getText();
         // conditions minimales de nom et prÃ©nom
         if (nom.isEmpty() || prenom.isEmpty()) {
-            showAlert(Alert.AlertType.ERROR, "Erreur", "Remplissez les champs obligatoires, Ã  savoir prÃ©nom et nom");
+            showAlert(Alert.AlertType.ERROR, "Erreur", "Remplissez les champs obligatoires, Ã  savoir prénom et nom");
         } else {
             employe.setNom(nom);
             employe.setPrenom(prenom);
@@ -58,9 +58,9 @@ public class EmployeModifierController {
             employe.setType(type);
             employe.setDate_embauche(LocalDate.parse(dateEmbauche));
 
-            showAlert(Alert.AlertType.INFORMATION, "Enregistrement",
+            /*showAlert(Alert.AlertType.INFORMATION, "Enregistrement",
                     "Les informations personnelles de " + employe.getPrenom() + ' '
-                            + employe.getNom() + " ont Ã©tÃ© modifiÃ©es avec succÃ¨s.");
+                            + employe.getNom() + " ont été modifiées avec succès.");*/
 
             OpenNewPageEmploye();
         }
@@ -69,7 +69,7 @@ public class EmployeModifierController {
 
     @FXML                                                           // bouton annuler les modifications
     private void annulerModifications() {
-        showAlert(Alert.AlertType.INFORMATION, "Annulation", "La tentative de modification des informations de l'employÃ© a Ã©tÃ© annulÃ©.");
+        /*showAlert(Alert.AlertType.INFORMATION, "Annulation", "La tentative de modification des informations de l'employé a été annulée.");*/
         OpenNewPageEmploye();
     }
 
@@ -81,7 +81,7 @@ public class EmployeModifierController {
         alert.showAndWait();
     }
 
-    // mÃ©thode pour rÃ©initialiser les champs
+    // méthode pour réinitialiser les champs
     private void resetInfosEmployes() {
         nomChamps.setText("");
         prenomChamps.setText("");
@@ -128,7 +128,7 @@ public class EmployeModifierController {
 
 
 
-            stage.setTitle("Gestion des employÃ©s");
+            stage.setTitle("Gestion des employés");
             stage.setScene(scene);
             stage.show();
 
@@ -137,7 +137,7 @@ public class EmployeModifierController {
         }
 
 
-        System.out.println("le bouton est cliquÃ©.");
+        System.out.println("le bouton est cliqué.");
 
     }
 

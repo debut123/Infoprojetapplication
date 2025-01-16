@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -20,7 +21,7 @@ public class ProjetModifierController {
     @FXML
     private TextField nomChamps;
     @FXML
-    private TextField dateLimiteChamps;
+    private DatePicker dateLimiteChamps;
     @FXML
     private TextField budgetChamps;
 
@@ -39,25 +40,25 @@ public class ProjetModifierController {
     }
 
     @FXML                                                           // Action Ã  executer pour le bouton modifier
-    private void employeModifier() {
+    private void projetModifier() {
         String nom = nomChamps.getText();
-        String dateLimite = dateLimiteChamps.getText();
+        LocalDate dateLimite = dateLimiteChamps.getValue();
         String budget = budgetChamps.getText();
         //String type = typeChamps.getText();
         //String dateEmbauche = dateEmbaucheChamps.getText();
         // conditions minimales de nom et prÃ©nom
-        if (nom.isEmpty() || dateLimite.isEmpty()) {
+        if (nom.isEmpty() || dateLimite == null) {
             showAlert(Alert.AlertType.ERROR, "Erreur", "Remplissez les champs obligatoires, Ã  savoir date limite et nom");
         } else {
             projet.setNom(nom);
             //projet.setPrenom(prenom);
             projet.setBudget(Integer.parseInt(budget));
             //employe.setType(type);
-            projet.setDate_limite(LocalDate.parse(dateLimite));
+            projet.setDate_limite(dateLimite);
 
-            showAlert(Alert.AlertType.INFORMATION, "Enregistrement",
+            /*showAlert(Alert.AlertType.INFORMATION, "Enregistrement",
                     "Les informations du projet "
-                            + projet.getNom() + " ont Ã©tÃ© modifiÃ©es avec succÃ¨s.");
+                            + projet.getNom() + " ont Ã©tÃ© modifiÃ©es avec succÃ¨s.");*/
 
             OpenNewPageProjet();
         }
@@ -108,14 +109,14 @@ public class ProjetModifierController {
 
     @FXML
     public void initialize() {
-        /*
+
         nomChamps.setText(projet.getNom());
         //prenomChamps.setText(employe.getPrenom());
         budgetChamps.setText(String.valueOf(projet.getBudget()));
         //typeChamps.setText(employe.getType());
-        dateLimiteChamps.setText(String.valueOf(projet.getDate_limite()));
+        dateLimiteChamps.setValue(projet.getDate_limite());
 
-         */
+
     }
 }
 
