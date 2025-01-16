@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0821cde0-54ce-463c-b4b7-a1b68ce7d898" name="Changes" comment="5 ème version mardi 14 janvier modification bouton état">
+    <list default="true" id="0821cde0-54ce-463c-b4b7-a1b68ce7d898" name="Changes" comment="5 ème version jeudi 16 janvier">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/ProjetGestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/ProjetGestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/TacheModifierController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/TacheModifierController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/tacheModifier.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/tacheModifier.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +182,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736966653741</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="5 ème version jeudi 16 janvier">
+      <option name="closed" value="true" />
+      <created>1737065291973</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1737065291973</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -210,6 +215,7 @@
     <MESSAGE value="4 ème version mardi 14 janvier avec les modifications de Louis." />
     <MESSAGE value="5 ème version mardi 14 janvier avec les rajouts du calendrier" />
     <MESSAGE value="5 ème version mardi 14 janvier modification bouton état" />
-    <option name="LAST_COMMIT_MESSAGE" value="5 ème version mardi 14 janvier modification bouton état" />
+    <MESSAGE value="5 ème version jeudi 16 janvier" />
+    <option name="LAST_COMMIT_MESSAGE" value="5 ème version jeudi 16 janvier" />
   </component>
 </project>

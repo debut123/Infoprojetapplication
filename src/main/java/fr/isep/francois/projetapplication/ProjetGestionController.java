@@ -170,7 +170,7 @@ public class ProjetGestionController {
                 ChoiceBox<String> etat = new ChoiceBox<>();
                 etat.setValue("état");
 
-                etat.getItems().addAll("à faire", "en cours", "Terminé");  // Ajouter les différents états possibles
+                etat.getItems().addAll("à faire", "en_cours", "Terminé");  // Ajouter les différents états possibles
 
 // Définir l'action à effectuer lorsque l'utilisateur sélectionne un nouvel état
                 etat.setOnAction(e -> {
