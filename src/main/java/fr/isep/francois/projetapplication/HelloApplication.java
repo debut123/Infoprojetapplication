@@ -40,6 +40,7 @@ public class HelloApplication extends Application {
         EmployeModifierController employeModifierController=new EmployeModifierController();
         ProjetModifierController projetModifierController=new ProjetModifierController();
         CalendrierController calendrierController=new CalendrierController();
+        TacheModifierController tacheModifierController = new TacheModifierController();
 
 
 
@@ -62,6 +63,7 @@ public class HelloApplication extends Application {
             employeModifierController.setStage(stage);
             projetModifierController.setStage(stage);
             calendrierController.setStage(stage);
+            tacheModifierController.setStage(stage);
 
 
 

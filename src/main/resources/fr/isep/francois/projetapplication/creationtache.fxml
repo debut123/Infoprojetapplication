@@ -17,8 +17,8 @@
 
     </padding>
     <Label text="Création d'une tache" />
-   <Label text="Nom :" />
-   <TextField fx:id="nom" />
+    <Label text="Nom :" />
+    <TextField fx:id="nom" />
     <ComboBox fx:id="priorité" prefWidth="150.0" promptText="Priorité">
         <items>
             <FXCollections fx:factory="observableArrayList">

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="fr.isep.francois.projetapplication.TacheModifierController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <Label text="Modification d'une tache" />
+    <Label text="Nom :" />
+    <TextField fx:id="nom" />
+    <ComboBox fx:id="priorité" prefWidth="150.0" promptText="Priorité">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="faible" />
+                <String fx:value="moyenne" />
+                <String fx:value="élevée" />
+            </FXCollections>
+        </items>
+    </ComboBox>
+    <Label text="Description de la tache :" />
+    <TextArea fx:id="description" prefHeight="200.0" prefWidth="200.0" />
+    <Button mnemonicParsing="false" onAction="#tacheModifier" text="Créer" />
+
+
+
+    <Button fx:id="accueil" mnemonicParsing="false" onAction="#annulerModifications" text="Annuler les modifications" />
+
+</AnchorPane>

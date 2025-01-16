@@ -9,14 +9,12 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.List;
 import java.util.Map;
 
 public class ProjetGestionController {
@@ -137,9 +135,8 @@ public class ProjetGestionController {
 
                 HBox hbox = new HBox();
                 Label labelTache = new Label(tache.getNom() + " - " + tache.getDescription());
+                Button modifierTache2 = new Button("Modifier");
                 Button boutonSuppression = new Button("Supprimer");
-
-
                 Button affectation=new Button("affecter des employés:");
                 Button affichage=new Button("information");
 
@@ -185,6 +182,10 @@ public class ProjetGestionController {
 
                     tache.supprimerTache(projetreferent.getListe_tache_projet(),tache);
                     initialize();
+                });
+
+                modifierTache2.setOnAction(event -> {
+                    OpenNewPagemodifierTache(tache);
                 });
 
                 // Ajouter le label et le bouton à la HBox
@@ -459,7 +460,7 @@ public class ProjetGestionController {
 
 
             // Charger la nouvelle page (Page2.fxml)
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("tacheaffichage.fxml"));
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("tacheModifier.fxml"));
             TacheAffichageController.setTache(tache);
             Scene scene = new Scene(loader.load(), 800, 600);
             stage.setTitle("Tache");

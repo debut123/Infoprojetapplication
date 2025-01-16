@@ -44,9 +44,7 @@ public class ProjetModifierController {
         String nom = nomChamps.getText();
         LocalDate dateLimite = dateLimiteChamps.getValue();
         String budget = budgetChamps.getText();
-        //String type = typeChamps.getText();
-        //String dateEmbauche = dateEmbaucheChamps.getText();
-        // conditions minimales de nom et prÃ©nom
+
         if (nom.isEmpty() || dateLimite == null) {
             showAlert(Alert.AlertType.ERROR, "Erreur", "Remplissez les champs obligatoires, Ã  savoir date limite et nom");
         } else {
@@ -99,7 +97,7 @@ public class ProjetModifierController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("le bouton est cliquÃ©.");
+        System.out.println("le bouton est cliqué.");
     }
 
     @FXML
