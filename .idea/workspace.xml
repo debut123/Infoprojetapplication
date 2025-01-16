@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0821cde0-54ce-463c-b4b7-a1b68ce7d898" name="Changes" comment="4 ème version mardi 14 janvier avec les modifications de Louis.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/CalendrierController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/calendrier.fxml" afterDir="false" />
+    <list default="true" id="0821cde0-54ce-463c-b4b7-a1b68ce7d898" name="Changes" comment="5 ème version mardi 14 janvier modification bouton état">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/Controle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/Controle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/Projet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/Projet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/controle.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/controle.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/ProjetGestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/ProjetGestionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/TacheModifierController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/isep/francois/projetapplication/TacheModifierController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/tacheModifier.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/isep/francois/projetapplication/tacheModifier.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +27,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="branche_secondaire" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -63,19 +65,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Demo_CSV.executor&quot;: &quot;Run&quot;,
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/frdch/IdeaProjects/Projetapplication/src/main/java/fr/isep/francois/projetapplication&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Demo_CSV.executor": "Run",
+    "Application.HelloApplication.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/Users/frdch/IdeaProjects/Projetapplication/src/main/java/fr/isep/francois/projetapplication",
+    "settings.editor.selected.configurable": "vcs.Git"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\frdch\IdeaProjects\Projetapplication" />
@@ -112,6 +114,9 @@
       <list>
         <item itemvalue="Application.HelloApplication" />
         <item itemvalue="Application.Demo_CSV" />
+        <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.Demo_CSV" />
+        <item itemvalue="Application.HelloApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -164,7 +169,23 @@
       <option name="project" value="LOCAL" />
       <updated>1736892951824</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="5 ème version mardi 14 janvier avec les rajouts du calendrier">
+      <option name="closed" value="true" />
+      <created>1736953278747</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1736953278747</updated>
+    </task>
+    <task id="LOCAL-00007" summary="5 ème version mardi 14 janvier modification bouton état">
+      <option name="closed" value="true" />
+      <created>1736966653741</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1736966653741</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -187,6 +208,8 @@
     <MESSAGE value="deuxième version 30 decembre" />
     <MESSAGE value="3ème version jeudi 2 janvier" />
     <MESSAGE value="4 ème version mardi 14 janvier avec les modifications de Louis." />
-    <option name="LAST_COMMIT_MESSAGE" value="4 ème version mardi 14 janvier avec les modifications de Louis." />
+    <MESSAGE value="5 ème version mardi 14 janvier avec les rajouts du calendrier" />
+    <MESSAGE value="5 ème version mardi 14 janvier modification bouton état" />
+    <option name="LAST_COMMIT_MESSAGE" value="5 ème version mardi 14 janvier modification bouton état" />
   </component>
 </project>

@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
+
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -16,11 +17,11 @@ public class TacheModifierController {
     private static Projet projet;
     private static Tache tache;
     @FXML
-    private TextField nomChamps;
+    private TextField nom;
     @FXML
-    private ComboBox<String> prioriteChamps;
+    private ComboBox<String> priorite;
     @FXML
-    private TextArea descriptionChamps;
+    private TextArea description;
 
     public static void setStage(Stage stage) {
         TacheModifierController.stage = stage;
@@ -30,6 +31,9 @@ public class TacheModifierController {
         TacheModifierController.projet = projet;
     }
 
+    public static void setTache(Tache tache) {
+        TacheModifierController.tache = tache;
+    }
 
     private void showAlert(Alert.AlertType alertType, String title, String message) {
         Alert alert = new Alert(alertType);
@@ -46,19 +50,24 @@ public class TacheModifierController {
 
     @FXML
     private void tacheModifier() {
-        String nom = nomChamps.getText();
-        String priorite = prioriteChamps.getValue();
-        String description = descriptionChamps.getText();
+        // Vérifiez d'abord que les éléments ne sont pas nuls
+        if (nom != null && priorite != null && description != null) {
+            String nomText = nom.getText();
+            String prioriteValue = priorite.getValue();
+            String descriptionText = description.getText();
 
-        if (!nomChamps.getText().isEmpty() && prioriteChamps.getValue() != null && !descriptionChamps.getText().isEmpty()) {
-            showAlert(Alert.AlertType.ERROR, "Erreur", "Remplissez tous les champs obligatoires.");
-        }
-        else {
-            tache.setNom(nom);
-            tache.setPriorite(priorite);
-            tache.setDescription(description);
+            // Vérifiez si les champs ne sont pas vides
+            if (!nomText.isEmpty() && prioriteValue != null && !descriptionText.isEmpty()) {
+                tache.setNom(nomText);
+                tache.setPriorite(prioriteValue);
+                tache.setDescription(descriptionText);
 
-            OpenNewPageTache();
+                OpenNewPageTache();
+            } else {
+                showAlert(Alert.AlertType.ERROR, "Erreur", "Remplissez tous les champs obligatoires.");
+            }
+        } else {
+            showAlert(Alert.AlertType.ERROR, "Erreur", "Un ou plusieurs champs sont manquants.");
         }
     }
 
