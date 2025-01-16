@@ -135,6 +135,7 @@ public class Controle {
         System.out.println("le bouton est cliqué.");
 
     }
+
     @FXML
     private void OpenNewPagecalendrier() {
 

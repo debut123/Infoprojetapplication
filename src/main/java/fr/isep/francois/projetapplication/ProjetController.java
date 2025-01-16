@@ -289,15 +289,21 @@ public class ProjetController {
         }
 
         try {
-
+            ProjetModifierController.setProjet(projet);
 
             // Charger la nouvelle page (Page2.fxml)
             FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("projetModifier.fxml"));
             ProjetModifierController.setProjet(projet);
             Scene scene = new Scene(loader.load(), 800, 600);
+
+            ProjetModifierController modifyProjController = loader.getController();
+            modifyProjController.setParentController(this);
+
             stage.setTitle("Modifier projet");
             stage.setScene(scene);
             stage.show();
+
+            modifyProjController.initialize();
 
         } catch (IOException e) {
             e.printStackTrace();
