@@ -4,11 +4,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.Dragboard;
+import javafx.scene.input.TransferMode;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.apache.commons.csv.CSVFormat;
@@ -35,7 +36,9 @@ public class ProjetGestionController {
 
     @FXML
     private Button ajoutTache;
+@FXML
 
+private HBox contenertache;
     @FXML
     private Label information;
     @FXML
@@ -44,6 +47,20 @@ public class ProjetGestionController {
     @FXML
     private ListView<HBox> listViewTaches;  // Liste pour afficher les tâches
 
+    @FXML
+
+    private ListView<HBox> inProgressList;
+
+    @FXML
+
+    private ListView<HBox> todoList;
+
+    @FXML
+
+    private ListView<HBox> doneColumn;
+    @FXML
+
+    private ProgressBar progressBar;
 
     public void setInformation(Label information) {
         this.information = information;
@@ -82,7 +99,10 @@ public class ProjetGestionController {
 
             afficherEmployes();
             afficherTaches();
-
+            /*setColumnDragAndDropSupport(todoList, "à faire");
+            setColumnDragAndDropSupport(inProgressList, "en_cours");
+            setColumnDragAndDropSupport(doneColumn, "Terminé");
+*/
         }
 
 
@@ -131,74 +151,126 @@ public class ProjetGestionController {
 
     // Méthode pour afficher les tâches dans la ListView
     private void afficherTaches() {
-        if (projetreferent != null && projetreferent.getListe_tache_projet() != null) {
-            listViewTaches.getItems().clear();  // Effacer les anciens éléments
+
+        int totalTaches = projetreferent.getListe_tache_projet().size();
+        int tachesTerminees = 0;
+
+        if (doneColumn != null && projetreferent.getListe_tache_projet() != null) {
+            doneColumn.getItems().clear(); // Effacer les anciens éléments
             for (Tache tache : projetreferent.getListe_tache_projet()) {
 
                 HBox hbox = new HBox();
                 Label labelTache = new Label(tache.getNom() + " - " + tache.getDescription());
+
                 Button boutonSuppression = new Button("Supprimer");
+                Button affectation = new Button("affecter des employés:");
+                Button affichage = new Button("information");
+                // Créer la ChoiceBox avec les valeurs d'état possibles
+                ChoiceBox<String> etat = new ChoiceBox<>();
+                etat.setValue("état");
 
+                etat.getItems().addAll("à faire", "en cours", "Terminé");  // Ajouter les différents états possibles
 
-                Button affectation=new Button("affecter des employés:");
-                Button affichage=new Button("information");
-
-                CheckBox etat=new CheckBox("état");
-
+// Définir l'action à effectuer lorsque l'utilisateur sélectionne un nouvel état
                 etat.setOnAction(e -> {
-                    if (etat.isSelected()) {
-                        if (tache.getEtat() == "en_cours") {
-                            tache.setEtat("Validé");
+                    String selectedEtat = etat.getValue(); // Récupérer la valeur sélectionnée dans la ChoiceBox
 
-                            // Action lorsque la case est cochée
-                        } else if (tache.getEtat() == "à faire") {
+                    if (selectedEtat != null) {
+                        // Mettre à jour l'état de la tâche en fonction de la sélection
+                        tache.setEtat(selectedEtat);
+                        inProgressList.getItems().clear();
+                        todoList.getItems().clear();
+                        doneColumn.getItems().clear();
 
-                            tache.setEtat("Validé");
-
-                        }
-
-                        else{
-
-                            tache.setEtat("Validé");
-                        }
-                        System.out.println("La tache est "+tache.getEtat());
-
-                    } else {
-                        //System.out.println("La ta");
-                        // Action lorsque la case n'est pas cochée
+                        System.out.println("La tâche est maintenant " + tache.getEtat());
+                        initialize();
                     }
                 });
 
 
-                // Ajouter un événement pour le bouton de suppression
-                affectation.setOnAction(event -> {
+                affectation.setOnAction(event -> OpenNewPageAffectation(tache));
 
-                    OpenNewPageAffectation(tache);
-                });
                 affichage.setOnAction(event -> {
                     TacheAffichageController.setProjet(projetreferent);
-                    OpenNewPageaffichageTache(tache);
 
+                    OpenNewPageaffichageTache(tache);
                 });
 
                 boutonSuppression.setOnAction(event -> {
-
-                    tache.supprimerTache(projetreferent.getListe_tache_projet(),tache);
+                    tache.supprimerTache(projetreferent.getListe_tache_projet(), tache);
                     initialize();
                 });
 
                 // Ajouter le label et le bouton à la HBox
-                hbox.getChildren().addAll(labelTache, boutonSuppression,affectation,affichage,etat);
+                hbox.getChildren().addAll(labelTache, boutonSuppression, affectation, affichage, etat);
 
-                // Ajouter la HBox à la ListView des tâches
-                listViewTaches.getItems().add(hbox);
+                // Ajouter le support du drag-and-drop sur la HBox
+                setDragAndDropSupport(hbox, tache);
 
-
+                // Ajouter la HBox à la ListView des tâches en fonction de l'état
+                if (tache.getEtat().equals("en_cours")) {
+                    inProgressList.getItems().add(hbox);
+                } else if (tache.getEtat().equals("à faire")) {
+                    todoList.getItems().add(hbox);
+                } else {
+                    doneColumn.getItems().add(hbox);
+                    tachesTerminees++;
+                }
 
 
             }
+            // Calculer le pourcentage de tâches terminées
+            double pourcentageTerminees = (double) tachesTerminees / totalTaches;
+
+            // Mettre à jour la ProgressBar avec le pourcentage
+            progressBar.setProgress(pourcentageTerminees);  // Mettre à jour la ProgressBar
         }
     }
+
+    // Méthode pour ajouter le support du drag and drop sur une HBox représentant une tâche
+    private void setDragAndDropSupport(HBox hbox, Tache tache) {
+        // Configurer l'événement "drag detected" lorsque l'utilisateur commence à faire glisser un élément
+        hbox.setOnDragDetected(event -> {
+            Dragboard dragboard = hbox.startDragAndDrop(TransferMode.MOVE);
+            ClipboardContent content = new ClipboardContent();
+            content.putString(tache.getNom()); // Utiliser le nom de la tâche pour identifier le drag
+            dragboard.setContent(content);
+            event.consume();
+        });
+
+        // Ajouter l'événement "drag over" pour autoriser le dépot
+        hbox.setOnDragOver(event -> {
+            if (event.getGestureSource() != hbox && event.getDragboard().hasString()) {
+                event.acceptTransferModes(TransferMode.MOVE);
+            }
+            event.consume();
+        });
+
+        // Ajouter l'événement "drag dropped" pour gérer le dépôt d'un élément
+        hbox.setOnDragDropped(event -> {
+            Dragboard dragboard = event.getDragboard();
+            boolean success = false;
+            if (dragboard.hasString()) {
+                String taskName = dragboard.getString();
+                // Logique pour mettre à jour l'état de la tâche en fonction de la colonne cible
+                if (hbox.getParent() == todoList) {
+                    tache.setEtat("à faire");
+                    todoList.getItems().add(hbox);
+                } else if (hbox.getParent() == inProgressList) {
+                    tache.setEtat("en_cours");
+                    inProgressList.getItems().add(hbox);
+                } else if (hbox.getParent() == doneColumn) {
+                    tache.setEtat("Terminé");
+                    doneColumn.getItems().add(hbox);
+                }
+                success = true;
+            }
+            event.setDropCompleted(success);
+            event.consume();
+        });
+    }
+
+
 
     @FXML
     private void OpenNewPageaccueil() {

@@ -1,0 +1,12 @@
+#contenertache {
+    -fx-hgap: 20px; /* Espacement horizontal entre les colonnes */
+}
+
+#todoColumn, #inProgressColumn, #doneColumn1 {
+    -fx-pref-width: 0px;  /* Permet aux colonnes de se redimensionner en fonction de l'espace disponible */
+    -fx-hgrow: always;     /* Assure que chaque colonne occupe une partie égale de l'espace */
+}
+
+#todoColumn, #inProgressColumn, #doneColumn1 {
+    -fx-alignment: center; /* Centrer les éléments dans chaque colonne */
+}
