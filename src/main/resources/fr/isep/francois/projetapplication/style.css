@@ -239,3 +239,14 @@
 .button.save:pressed {
     -fx-background-color: #2C6B2F; /* Fond vert plus foncé lors de la pression */
 }
+/* Style pour la ProgressBar */
+.progress-bar {
+    -fx-accent: #4caf50;  /* Couleur de la barre de progression (par exemple, vert) */
+    -fx-background-color: #e0e0e0; /* Couleur de l'arrière-plan de la barre */
+}
+
+/* Si vous voulez personnaliser le "background" (l'arrière-plan du progress) */
+.progress-bar .bar {
+    -fx-background-color: #76c7c0; /* Couleur de la barre de progression (par exemple, bleu clair) */
+}
+

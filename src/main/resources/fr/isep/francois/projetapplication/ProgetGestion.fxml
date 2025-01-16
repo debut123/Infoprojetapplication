@@ -6,29 +6,51 @@
 
 <VBox alignment="CENTER" spacing="20.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.isep.francois.projetapplication.ProjetGestionController">
     <padding>
-
         <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
-
-
     </padding>
+
     <Label text="Gestion du projet:" />
-   <Label fx:id="information" text="information :" />
+    <Label fx:id="information" text="information :" />
 
     <!-- Affichage des employés -->
     <Label text="Employés :" />
     <ListView fx:id="listViewEmployes" />
-   <Button mnemonicParsing="false" onAction="#OpenNewPageajoutemploye" text="Ajouter employe" />
 
-    <!-- Affichage des tâches -->
+    <Button mnemonicParsing="false" onAction="#OpenNewPageajoutemploye" text="Ajouter employé" />
+
+    <!-- Affichage des colonnes Kanban pour les tâches -->
     <Label text="Tâches :" />
-    <ListView fx:id="listViewTaches" />
-    <ProgressBar fx:id="progressBar" prefWidth="400" progress="0.0"/>
-   <Button mnemonicParsing="false" onAction="#OpenNewPageCreationtache" text="Ajouter tache" />
-   <Button mnemonicParsing="false" onAction="#ecrireCSV_rapport" text="générer un rapport" />
+   <Label>
+      <graphic>
+      
+          <ProgressBar fx:id="progressBar" prefWidth="1000" progress="0.0" styleClass="progress-bar" />
+      </graphic></Label>
 
-   <Button mnemonicParsing="false" onAction="#OpenNewPageaccueil" text="Retour Acceuil" />
+    <!-- HBox pour organiser les colonnes Kanban -->
+    <HBox fx:id="contenertache" spacing="20.0">
+        <!-- À faire -->
+        <VBox fx:id="todoColumn" prefWidth="600" VBox.vgrow="ALWAYS">
+            <Label text="À Faire" />
+            <ListView fx:id="todoList" />
+        </VBox>
+
+        <!-- En cours -->
+        <VBox fx:id="inProgressColumn" prefWidth="600" VBox.vgrow="ALWAYS">
+            <Label text="En Cours" />
+            <ListView fx:id="inProgressList" />
+        </VBox>
+
+        <!-- Terminé -->
+        <VBox fx:id="doneColumn1" prefWidth="600" VBox.vgrow="ALWAYS">
+            <Label text="Terminé" />
+            <ListView fx:id="doneColumn" />
+        </VBox>
+    </HBox>
 
 
 
-
+    <!-- Boutons d'action -->
+    <Button mnemonicParsing="false" onAction="#OpenNewPageCreationtache" text="Ajouter tâche" />
+    <Button mnemonicParsing="false" onAction="#ecrireCSV_rapport" text="Générer un rapport" />
+    <Button mnemonicParsing="false" onAction="#OpenNewPageaccueil" text="Retour Accueil" />
 </VBox>
